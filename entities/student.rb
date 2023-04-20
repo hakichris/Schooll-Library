@@ -3,7 +3,7 @@ require_relative './person'
 class Student < Person
   attr_accessor :classroon
 
-  def initialize(name = 'unknown', age, classroon, parent_permission: true)
+  def initialize(age, classroon, name = 'unknown', parent_permission: true)
     @classroon = classroon
     super(name, age, parent_permission: parent_permission)
   end

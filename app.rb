@@ -1,5 +1,5 @@
 require_relative './Associations/book'
-require_relative'./Associations/classroom'
+require_relative './Associations/classroom'
 require_relative './Associations/rental'
 require_relative './entities/person'
 require_relative './entities/student'
@@ -15,9 +15,9 @@ class App
 
   def list_all_book
     if @book.empty?
-     puts 'oops! the book list is emplty, kindly add a new book'
+      puts 'oops! the book list is emplty, kindly add a new book'
     else
-     @book.each { |book| puts " Title: #{book.title}, Author: #{book.author}" }
+      @book.each { |book| puts " Title: #{book.title}, Author: #{book.author}" }
     end
   end
 
@@ -25,12 +25,12 @@ class App
     if @person.empty?
       puts 'oops! the people list is empty, kindly add a new people'
     else
-     @person.each { |people| puts "#{people.class}, name: #{people.name}, ID: #{people.id}, Age: #{people.age}" }
+      @person.each { |people| puts "#{people.class}, name: #{people.name}, ID: #{people.id}, Age: #{people.age}" }
     end
   end
 
   def create_person
-     puts 'do you want to create a student (1) or a teacher (2)'
+    puts 'do you want to create a student (1) or a teacher (2)'
     option = gets.chomp
     case option
     when '1'
@@ -51,7 +51,7 @@ class App
 
     puts 'has parent permision (Y/N)'
     parent_permission = gets.chomp.downcase
-  
+
     @person << Student.new(name, age, @classroom, parent_permission: parent_permission == 'y')
     puts 'Student created and added succesfully'
   end
