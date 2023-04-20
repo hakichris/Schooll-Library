@@ -1,10 +1,10 @@
-require_relative './decorators/nameable'
+require_relative '../decorators/nameable'
 
 class Person < Nameable
   attr_accessor :name, :age
   attr_reader :id, :rentals
 
-  def initialize(age, name = 'unknown', parent_permission: true)
+  def initialize(name = 'unknown', age, parent_permission: true)
     super()
     @id = Random.rand(1..1000)
     @age = age
