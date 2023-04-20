@@ -52,7 +52,7 @@ class App
     puts 'has parent permision (Y/N)'
     parent_permission = gets.chomp.downcase
   
-    @person << Student.new(name, age, parent_permission: parent_permission == 'y')
+    @person << Student.new(name, age, @classroom, parent_permission: parent_permission == 'y')
     puts 'Student created and added succesfully'
   end
 
@@ -96,7 +96,7 @@ class App
 
     person_id = gets.chomp.to_i
 
-    print 'Date: '
+    print 'Date: mm/dd/yy '
     date = gets.chomp
 
     @rental << Rental.new(date, @person[person_id], @book[book_id])
