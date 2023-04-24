@@ -128,11 +128,6 @@ To run tests, run the following command:
 - Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/hakichris)
 
-👤 **Racheal Appiah-kubi**
-
-- GitHub: [@githubhandle](https://github.com/coderacheal)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/racheal-appiah-kubi/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
