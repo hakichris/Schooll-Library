@@ -1,8 +1,12 @@
 require_relative './app'
+require_relative './storage'
 
 class Options
   def initialize
     @app = App.new
+    @app.book = Storage.load_data('book')
+    @app.person = Storage.load_data('person')
+    @app.rental = Storage.load_data('rental')
     puts "\nWELCOME TO THE SCHOOL LIBRARY APP!\n"
     show_menu
   end
@@ -15,10 +19,13 @@ class Options
       @app.list_all_people
     when '3'
       @app.create_person
+      Storage.save_date('person', @app.person)
     when '4'
       @app.create_book
+      Storage.save_date('book', @app.book)
     when '5'
       @app.create_rental
+      Storage.save_date('rental', @app.rental)
     when '6'
       @app.list_all_rentals
     else
