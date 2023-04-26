@@ -1,36 +1,9 @@
 require_relative './app'
-require_relative './storage'
 
 class Options
   def initialize
-    @app = App.new
-    @app.book = Storage.load_data('book')
-    @app.person = Storage.load_data('person')
-    @app.rental = Storage.load_data('rental')
+    @app = App.new(self)
     puts "\nWELCOME TO THE SCHOOL LIBRARY APP!\n"
-    show_menu
-  end
-
-  def select_option(user_choice)
-    case user_choice
-    when '1'
-      @app.list_all_book
-    when '2'
-      @app.list_all_people
-    when '3'
-      @app.create_person
-      Storage.save_data('person', @app.person)
-    when '4'
-      @app.create_book
-      Storage.save_data('book', @app.book)
-    when '5'
-      @app.create_rental
-      Storage.save_data('rental', @app.rental)
-    when '6'
-      @app.list_all_rentals
-    else
-      puts 'Invalid option, please try again!'
-    end
     show_menu
   end
 
@@ -46,7 +19,7 @@ class Options
     user_choice = gets.chomp
     return exit if user_choice == '7'
 
-    select_option(user_choice)
+    @app.select_option(user_choice)
   end
 
   def exit
