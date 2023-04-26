@@ -5,7 +5,7 @@ class Storage
   @url = './db/'
 
   def self.save_data(class_name, object)
-    p File.write("#{@url}#{class_name}.#{@file_extension}", JSON.generate(object))
+    File.write("#{@url}#{class_name}.#{@file_extension}", JSON.generate(object))
   end
 
   def self.load_data(class_name)
