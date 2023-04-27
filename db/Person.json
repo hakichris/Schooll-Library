@@ -5,5 +5,12 @@
     "classroom": null,
     "name": 34,
     "parent_permission": true
+  },
+  {
+    "json_class": "Teacher",
+    "age": "er",
+    "specialization": "er",
+    "name": "er",
+    "parent_permission": true
   }
 ]
