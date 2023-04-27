@@ -39,7 +39,7 @@ class Rental
         puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
       end
       id = gets.chomp.to_i
-      rentals = @rentals.filter { |rental| rental.person.id == id}
+      rentals = @rentals.filter { |rental| rental.person.id == id }
 
       puts 'Rentals:'
       rentals.each do |rental|

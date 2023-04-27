@@ -42,7 +42,8 @@ class People
     parent_permission = gets.chomp.downcase == 'y'
     print 'Classroom: '
     classroom = gets.chomp.to_i
-    @people.push(Student.new(age, classroom, name, parent_permission: parent_permission))
+    person = Student.new(age, classroom, name, parent_permission: parent_permission)
+    @people << person
     puts "\nPerson created successfuly"
   end
 
