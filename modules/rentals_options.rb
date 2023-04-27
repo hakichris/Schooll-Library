@@ -5,19 +5,19 @@ class Rental
 
   def initialize(book_options, people_options)
     @rentals = []
-    @book_options = book_options
-    @people_options = people_options
+    @book = book_options
+    @people = people_options
   end
 
   def create_rental
     puts 'Select a book from the following list by number'
-    @books_options.books.each_with_index do |book, index|
+    @book.books.each_with_index do |book, index|
       puts "#{index}) Title: '#{book.title}', Author: #{book.author}"
     end
     book_id = gets.chomp.to_i
-    book = @books.books.find { |b| b.id == book_id }
+    book = @book.books.find { |b| b.id == book_id }
     puts 'Select a person from the following list by number (not id)'
-    @people_options.people.each_with_index do |person, index|
+    @people.people.each_with_index do |person, index|
       puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
     end
     person_id = gets.chomp.to_i

@@ -11,7 +11,7 @@ class App
     @rentals_list = Rental.new(@book_options, @people_options)
     @book_list.books = Storage.load_data('Books')
     @people_list.people = Storage.load_data('Person')
-    @rentals_list.rentals= Storage.load_data('Rental')
+    @rentals_list.rentals = Storage.load_data('Rental')
   end
 
   def select_option(user_choice)
