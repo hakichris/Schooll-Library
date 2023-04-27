@@ -3,9 +3,8 @@ require_relative '../Associations/rental'
 class Rental
   attr_accessor :rentals
 
-  def initialize(date, book_options, people_options)
+  def initialize(book_options, people_options)
     @rentals = []
-    @date = date
     @books = book_options
     @people = people_options
   end
@@ -16,16 +15,16 @@ class Rental
       puts "#{index}) Title: '#{book.title}', Author: #{book.author}"
     end
     book_id = gets.chomp.to_i
-    puts
+    book = @books.books.find { |b| b.id == book_id }
     puts 'Select a person from the following list by number (not id)'
     @people.people.each_with_index do |person, index|
       puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
     end
     person_id = gets.chomp.to_i
-
+    person = @people.people.find { |p| p.id == person_id }
     print 'Date: '
     date = gets.chomp
-    @rentals.push(Rental.new(date, @books.books[book_id], @people.people[person_id]))
+    @rentals.push(Rental.new(date, book, person))
     puts 'Rental created successfully'
   end
 

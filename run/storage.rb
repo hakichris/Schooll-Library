@@ -1,18 +1,18 @@
 require 'json'
-module Storage
-  BOOKS_PATH = './db/books.json'.freeze
-  PEOPLE_PATH = './db/people.json'.freeze
-  RENTALS_PATH = './db/rentals.json'.freeze
-  def self.load_data(file_path)
-    if File.exist?(file_path) && !File.empty?(file_path)
-      file = File.read(file_path)
-      JSON.parse(file)
-    else
-      []
-    end
+class Storage
+  @file_extention = 'json'
+  @base_url = './db/'
+
+  def self.save_data(class_name, object)
+    File.write("#{@base_url}#{class_name}.#{@file_extention}", JSON.pretty_generate(object))
   end
 
-  def self.save_data(file_path, data)
-    File.write(file_path, JSON.pretty_generate(data))
+  def self.load_data(class_name)
+    file_path = "#{@base_url}#{class_name}.#{@file_extention}"
+
+    return [] unless File.exist?(file_path)
+
+    data_from_file = File.read(file_path)
+    JSON.parse(data_from_file, create_additions: true)
   end
 end

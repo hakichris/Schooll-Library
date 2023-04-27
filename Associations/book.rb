@@ -13,12 +13,15 @@ class Book
     rental.book = self
   end
 
-  def to_h
+  def to_json(*args)
     {
-      id: @id,
-      title: @title,
-      author: @author,
-      rentals: @rentals.map(&:to_h)
-    }
+      JSON.create_id => self.class.name,
+      'title' => @title,
+      'author' => @author
+    }.to_json(*args)
+  end
+
+  def self.json_create(object)
+    new(object['title'], object['author'])
   end
 end

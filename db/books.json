@@ -1,10 +1,7 @@
 [
   {
-    "id": 66,
-    "title": "t",
-    "author": "t",
-    "rentals": [
-
-    ]
+    "json_class": "Book",
+    "title": "hello",
+    "author": "jf"
   }
 ]
