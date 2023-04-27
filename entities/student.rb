@@ -1,11 +1,15 @@
 require_relative './person'
 
 class Student < Person
-  attr_accessor :classroon
+  attr_reader :classroom
 
-  def initialize(age, name, classroon, parent_permission: true)
-    @classroon = classroon
-    super(name, age, parent_permission: parent_permission)
+  def initialize(age, classroom, name = 'Unknown', parent_permission: true)
+    super(age, name, parent_permission: parent_permission)
+    @classroom = classroom
+  end
+
+  def play_hooky
+    '¯\\(ツ)/¯'
   end
 
   def classroom=(classroom)
@@ -13,7 +17,18 @@ class Student < Person
     classroom.students.push(self) unless classroom.students.include?(self)
   end
 
-  def play_hooky
-    '¯(ツ)/¯'
+  def to_json(*args)
+    {
+      JSON.create_id => self.class.name,
+      'id' => @id,
+      'age' => @age,
+      'classroom' => @classroom,
+      'name' => @name,
+      'parent_permission' => @parent_permission
+    }.to_json(*args)
+  end
+
+  def self.json_create(object)
+    new(object['age'], object['classroom'], object['name'], parent_permission: object['parent_permission'])
   end
 end

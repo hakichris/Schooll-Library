@@ -1,0 +1,20 @@
+[
+  {
+    "json_class": "Rental",
+    "date": "23/4/2023",
+    "book": {
+      "json_class": "Book",
+      "id": 614,
+      "title": "My LOVE LIFE",
+      "author": "Christian"
+    },
+    "person": {
+      "json_class": "Student",
+      "id": 209,
+      "age": 23,
+      "classroom": 4,
+      "name": "chris",
+      "parent_permission": true
+    }
+  }
+]

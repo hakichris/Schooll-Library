@@ -1,0 +1,14 @@
+[
+  {
+    "json_class": "Book",
+    "id": 614,
+    "title": "My LOVE LIFE",
+    "author": "Christian"
+  },
+  {
+    "json_class": "Book",
+    "id": 477,
+    "title": "Life",
+    "author": "Kevin"
+  }
+]
