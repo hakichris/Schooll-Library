@@ -1,48 +1,46 @@
 require_relative '../Associations/rental'
 
-class Rental
-  attr_accessor :rentals
+class RentalOptions
+  attr_accessor :rentals_list
 
   def initialize(book_options, people_options)
-    @rentals = []
-    @book = book_options
-    @people = people_options
+    @rentals_list = []
+    @book_options = book_options
+    @people_options = people_options
   end
 
   def create_rental
     puts 'Select a book from the following list by number'
-    @book.books.each_with_index do |book, index|
+    @book_options.books_list.each_with_index do |book, index|
       puts "#{index}) Title: '#{book.title}', Author: #{book.author}"
     end
-    book_id = gets.chomp.to_i
-    book = @book.books.find { |b| b.id == book_id }
+    book_num = gets.chomp.to_i
     puts 'Select a person from the following list by number (not id)'
-    @people.people.each_with_index do |person, index|
+    @people_options.people_list.each_with_index do |person, index|
       puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
     end
-    person_id = gets.chomp.to_i
-    person = @people.people.find { |p| p.id == person_id }
+    person_num = gets.chomp.to_i
+
     print 'Date: '
     date = gets.chomp
-    @rentals.push(Rental.new(date, book, person))
+    @rentals_list.push(Rental.new(date, @book_options.books_list[book_num], @people_options.people_list[person_num]))
     puts 'Rental created successfully'
   end
 
   def list_all_rentals
-    if rentals.empty?
+    if rentals_list.empty?
       puts 'No record found! Add a rental...'
     else
-      puts "Available rentals in the library: #{rentals.count}"
-      puts 'Select a person from the following list by id '
-      @people.people.each_with_index do |person, index|
+      puts "Available rentals in the library: #{rentals_list.count}"
+      puts 'Select a person from the following list by ID'
+      @people_options.people_list.each_with_index do |person, index|
         puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
       end
       id = gets.chomp.to_i
-      rentals = @rentals.filter { |rental| rental.person.id == id }
 
       puts 'Rentals:'
-      rentals.each do |rental|
-        puts "Date: #{rental.date}, Book: '#{rental.book.title}' by #{rental.book.author}"
+      @rentals_list.each do |rental|
+        puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}" if rental.person.id == id
       end
     end
   end

@@ -1,0 +1,34 @@
+[
+  {
+    "json_class": "Rental",
+    "date": "6t9",
+    "book": {
+      "json_class": "Book",
+      "title": "fiuty",
+      "author": "jhgc"
+    },
+    "person": {
+      "json_class": "Student",
+      "age": 76,
+      "classroom": 0,
+      "name": "jf",
+      "parent_permission": true
+    }
+  },
+  {
+    "json_class": "Rental",
+    "date": "86t",
+    "book": {
+      "json_class": "Book",
+      "title": "fiuty",
+      "author": "jhgc"
+    },
+    "person": {
+      "json_class": "Teacher",
+      "age": "7",
+      "specialization": "jg",
+      "name": "hg",
+      "parent_permission": true
+    }
+  }
+]

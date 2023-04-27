@@ -1,16 +1,16 @@
 [
   {
     "json_class": "Student",
-    "age": 0,
-    "classroom": null,
-    "name": 34,
+    "age": 76,
+    "classroom": 0,
+    "name": "jf",
     "parent_permission": true
   },
   {
     "json_class": "Teacher",
-    "age": "er",
-    "specialization": "er",
-    "name": "er",
+    "age": "7",
+    "specialization": "jg",
+    "name": "hg",
     "parent_permission": true
   }
 ]
