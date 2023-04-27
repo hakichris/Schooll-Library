@@ -12,7 +12,7 @@ class BookOptions
       puts 'No record found! Add some books...'
     else
       puts "Available books in the library: #{books_list.count}"
-      @books_list.each { |book| puts "Title: #{book.title}, Author: #{book.author}" }
+      @books_list.each { |book| puts "Title: #{book.title}, Author: #{book.author}, ID: #{book.id}" }
     end
   end
 

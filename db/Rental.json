@@ -1,33 +1,19 @@
 [
   {
     "json_class": "Rental",
-    "date": "6t9",
+    "date": "23/4/2023",
     "book": {
       "json_class": "Book",
-      "title": "fiuty",
-      "author": "jhgc"
+      "id": 614,
+      "title": "My LOVE LIFE",
+      "author": "Christian"
     },
     "person": {
       "json_class": "Student",
-      "age": 76,
-      "classroom": 0,
-      "name": "jf",
-      "parent_permission": true
-    }
-  },
-  {
-    "json_class": "Rental",
-    "date": "86t",
-    "book": {
-      "json_class": "Book",
-      "title": "fiuty",
-      "author": "jhgc"
-    },
-    "person": {
-      "json_class": "Teacher",
-      "age": "7",
-      "specialization": "jg",
-      "name": "hg",
+      "id": 209,
+      "age": 23,
+      "classroom": 4,
+      "name": "chris",
       "parent_permission": true
     }
   }
