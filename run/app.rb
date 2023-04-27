@@ -8,7 +8,7 @@ class App
     @options = options
     @book_options = Books.new
     @people_options = People.new
-    @rentals_list = Rental.new(@book_options, @people_options)
+    @rentals_list = Rental.new(@date, @book_options, @people_options)
     @book_options.books = Storage.load_data('books')
     @people_options.people = Storage.load_data('Person')
     @rentals_list.rentals = Storage.load_data('Rental')

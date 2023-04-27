@@ -5,14 +5,14 @@ class Storage
   @url = './db/'
 
   def self.save_data(class_name, object)
-    File.write("#{@url}#{class_name}.#{@file_extension}", JSON.generate(object))
+    File.write("#{@url}#{class_name}.#{@file_extension}", JSON.pretty_generate(object))
   end
 
   def self.load_data(class_name)
     file_path = "#{@url}#{class_name}.#{@file_extension}"
-    return [] unless File.exist?(file_path)
+    return [] unless File.exist?(file_path) && !File.empty?(file_path)
 
     data_from = File.read(file_path)
-    JSON.parse(data_from, create_additions: true)
+    JSON.parse(data_from)
   end
 end
