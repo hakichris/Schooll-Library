@@ -1,7 +1,6 @@
 require_relative './spec_helper'
 require 'rspec'
 
-
 describe Classroom do
   describe '>> new classroom' do
     it '>> Create a new object' do

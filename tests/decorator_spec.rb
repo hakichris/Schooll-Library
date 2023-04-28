@@ -1,7 +1,6 @@
 require_relative './spec_helper'
 require 'rspec'
 
-
 describe Nameable do
   before :each do
     @nameable = Nameable.new
